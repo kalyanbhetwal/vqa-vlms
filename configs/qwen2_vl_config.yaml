@@ -1,0 +1,37 @@
+# Qwen2-VL Model Configuration for vLLM
+
+# Model variants (uncomment the one you want to use)
+# model_name: "Qwen/Qwen2-VL-2B-Instruct"
+model_name: "Qwen/Qwen2-VL-7B-Instruct"
+# model_name: "Qwen/Qwen2-VL-72B-Instruct"
+
+# vLLM server settings
+vllm_config:
+  # GPU settings
+  tensor_parallel_size: 1  # Number of GPUs to use (increase for 72B model)
+  gpu_memory_utilization: 0.9  # Fraction of GPU memory to use
+
+  # Performance settings
+  max_model_len: 4096  # Maximum sequence length
+  max_num_seqs: 8  # Maximum number of sequences to process in parallel
+
+  # Precision
+  dtype: "auto"  # or "float16", "bfloat16"
+
+  # API server settings
+  host: "0.0.0.0"
+  port: 8000
+
+# Model-specific settings
+model_config:
+  trust_remote_code: true
+  max_pixels: 1280  # Maximum image resolution (width * height)
+  min_pixels: 256   # Minimum image resolution
+
+# Generation parameters (defaults)
+generation_config:
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 50
+  max_tokens: 512
+  repetition_penalty: 1.05
