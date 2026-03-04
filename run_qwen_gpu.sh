@@ -23,8 +23,8 @@ module load cuda/12.1.1
 # Activate virtual environment
 source /fs/nexus-scratch/bhetwal/vllm-env/bin/activate
 
-# Set environment variable to disable tokenizer caching (workaround for tokenizer bug)
-export VLLM_DISABLE_TOKENIZER_CACHE=1
+# Upgrade transformers to version compatible with vLLM 0.11.2
+# pip install 'transformers>=4.47.0' --quiet
 
 echo "Starting vLLM server with Qwen2.5-7B-Instruct"
 echo "GPU: $CUDA_VISIBLE_DEVICES"
