@@ -49,12 +49,10 @@ fi
 
 echo "vLLM server started successfully"
 
-# Run your test script
-echo "Running test script..."
-python test_Qwen_2.5_7B_Instruct.py
+# Server is now running
+echo "VQA server is ready at http://localhost:8000"
+echo "Server will run until job time limit (3 hours)"
+echo "To use: python scripts/vqa_inference.py --mode api --image IMAGE.jpg --question 'Your question'"
 
-# Cleanup
-kill $VLLM_PID
-wait $VLLM_PID 2>/dev/null || true
-
-echo "Job complete"
+# Wait for server to finish (keeps job alive)
+wait $VLLM_PID
