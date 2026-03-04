@@ -1,0 +1,722 @@
+{
+  "summary": {
+    "total_samples": 10,
+    "skipped_samples": 0,
+    "avg_hallucination_rate": 27.898395721925134,
+    "total_label_counts": {
+      "accurate": 53,
+      "inaccurate": 24,
+      "analysis": 14
+    },
+    "label_percentages": {
+      "accurate": 58.24175824175825,
+      "inaccurate": 26.373626373626376,
+      "analysis": 15.384615384615385
+    },
+    "total_annotations": 91
+  },
+  "results": [
+    {
+      "image": "COCO_val2014_000000193245.jpg",
+      "question": "What do you think is going on in this snapshot?",
+      "prediction": "The image captures a lively scene of a kite festival. Numerous kites of various sizes and colors are soaring in the sky, with some closer to the ground and others higher up. On the ground, several people are actively engaged in flying these kites. Some of them are wearing baseball caps, and a few are holding kites. The kites are scattered throughout the sky, with some flying higher and others closer to the ground. The people on the ground are spread out, with some standing closer to the camera and others further away, all focused on their kites.",
+      "ground_truth_response": "The image depicts a large group of people gathered in a grassy field, enjoying the day by flying kites. There are several kites visible in the sky, ranging in size and color, creating a vibrant and lively atmosphere. In addition to the kites, there are several handbags scattered throughout the scene, possibly belonging to some of the people participating in the kite-flying activity. Some of the handbags are closer to the center of the field, while others are positioned more towards the edges. Overall, it appears to be a fun and enjoyable event for everyone involved.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 103,
+          "text": "The image depicts a large group of people gathered in a grassy field, enjoying the day by flying kites.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 104,
+          "end": 216,
+          "text": "There are several kites visible in the sky, ranging in size and color, creating a vibrant and lively atmosphere.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 217,
+          "end": 385,
+          "text": "In addition to the kites, there are several handbags scattered throughout the scene, possibly belonging to some of the people participating in the kite-flying activity.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 386,
+          "end": 497,
+          "text": "Some of the handbags are closer to the center of the field, while others are positioned more towards the edges.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 498,
+          "end": 572,
+          "text": "Overall, it appears to be a fun and enjoyable event for everyone involved.",
+          "label": "ANALYSIS"
+        }
+      ],
+      "label_counts": {
+        "accurate": 2,
+        "inaccurate": 2,
+        "analysis": 1
+      },
+      "hallucination_rate": 50.0,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000193245.jpg",
+      "question": "What do you think is going on in this snapshot?",
+      "prediction": "The image showcases a lively scene of a kite festival. Numerous kites of various sizes and colors are soaring in the sky, with some closer to the ground and others higher up. On the ground, there are several people, some of whom are wearing baseball caps. The kites are scattered throughout the sky, with some flying higher and others closer to the horizon. The people on the ground are spread out, with some standing closer to the camera and others further away, all seemingly enjoying the event.",
+      "ground_truth_response": "The image depicts a large group of people gathered in a grassy field, enjoying the outdoors and flying kites. There are several kites visible in the sky, creating a festive atmosphere. Some of the kites are closer to the ground, while others are higher up, creating a variety of shapes and colors in the sky.   In addition to the kite enthusiasts, there are several people scattered throughout the scene, some standing or sitting on the grass, and others walking around. Overall, it appears to be a lively and enjoyable event for all involved.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 109,
+          "text": "The image depicts a large group of people gathered in a grassy field, enjoying the outdoors and flying kites.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 110,
+          "end": 184,
+          "text": "There are several kites visible in the sky, creating a festive atmosphere.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 185,
+          "end": 308,
+          "text": "Some of the kites are closer to the ground, while others are higher up, creating a variety of shapes and colors in the sky.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 311,
+          "end": 470,
+          "text": "In addition to the kite enthusiasts, there are several people scattered throughout the scene, some standing or sitting on the grass, and others walking around.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 471,
+          "end": 543,
+          "text": "Overall, it appears to be a lively and enjoyable event for all involved.",
+          "label": "ANALYSIS"
+        }
+      ],
+      "label_counts": {
+        "accurate": 4,
+        "inaccurate": 0,
+        "analysis": 1
+      },
+      "hallucination_rate": 0.0,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000193245.jpg",
+      "question": "What do you think is going on in this snapshot?",
+      "prediction": "The image captures a lively scene of a kite festival. Numerous kites of various sizes and colors are soaring in the sky, with some closer to the ground and others higher up. On the ground, several people are actively engaged in flying these kites. Some of them are wearing baseball caps, and a few are holding kites. The kites are scattered throughout the sky, with some flying higher and others closer to the ground. The people on the ground are spread out, with some standing closer to the camera and others further away, all participating in the kite-flying activity.",
+      "ground_truth_response": "The image depicts a large group of people gathered in a grassy field, enjoying the day by flying kites. There are several kites visible in the sky, with some of them closer to the ground and others higher up.   In addition to the kites, there are several people scattered throughout the scene, some standing and others sitting on the ground. They appear to be enjoying the outdoor activity together, possibly as part of a community event or gathering. Overall, the scene radiates a sense of joy and togetherness, as people come together to fly kites and spend time in the great outdoors.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 103,
+          "text": "The image depicts a large group of people gathered in a grassy field, enjoying the day by flying kites.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 104,
+          "end": 208,
+          "text": "There are several kites visible in the sky, with some of them closer to the ground and others higher up.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 211,
+          "end": 341,
+          "text": "In addition to the kites, there are several people scattered throughout the scene, some standing and others sitting on the ground.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 342,
+          "end": 451,
+          "text": "They appear to be enjoying the outdoor activity together, possibly as part of a community event or gathering.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 452,
+          "end": 587,
+          "text": "Overall, the scene radiates a sense of joy and togetherness, as people come together to fly kites and spend time in the great outdoors.",
+          "label": "ANALYSIS"
+        }
+      ],
+      "label_counts": {
+        "accurate": 3,
+        "inaccurate": 0,
+        "analysis": 2
+      },
+      "hallucination_rate": 0.0,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000193245.jpg",
+      "question": "What do you think is going on in this snapshot?",
+      "prediction": "The image captures a lively scene of a kite festival. Numerous kites of various sizes and colors are soaring in the sky, with some closer to the ground and others higher up. On the ground, several people are actively engaged in flying these kites. Some of them are wearing baseball caps, and a few are holding kites. The kites are scattered throughout the sky, creating a vibrant and dynamic atmosphere.",
+      "ground_truth_response": "The scene depicts a large group of people gathered in a grassy field, enjoying the windy day by flying kites. There are several kites visible in the sky, some closer to the ground and others higher up, creating a colorful and lively atmosphere.   In total, there are at least 13 people participating in the kite-flying event. They are spread out across the field, with some closer to the kites and others further away. One person can be seen wearing a backpack, while another carries a handbag. The group is having a great time as they fly their kites and enjoy the outdoor activity together.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 244,
+          "text": "The scene depicts a large group of people gathered in a grassy field, enjoying the windy day by flying kites. There are several kites visible in the sky, some closer to the ground and others higher up, creating a colorful and lively atmosphere.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 247,
+          "end": 325,
+          "text": "In total, there are at least 13 people participating in the kite-flying event.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 326,
+          "end": 418,
+          "text": "They are spread out across the field, with some closer to the kites and others further away.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 419,
+          "end": 494,
+          "text": "One person can be seen wearing a backpack, while another carries a handbag.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 495,
+          "end": 591,
+          "text": "The group is having a great time as they fly their kites and enjoy the outdoor activity together",
+          "label": "ANALYSIS"
+        }
+      ],
+      "label_counts": {
+        "accurate": 4,
+        "inaccurate": 0,
+        "analysis": 1
+      },
+      "hallucination_rate": 0.0,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000086848.jpg",
+      "question": "Can you describe the main features of this image for me?",
+      "prediction": "A woman is wearing a scarf that covers a significant portion of her upper body. On the table in front of her, there's a cake with a lit candle on it. To the right of the cake, there's a cup. The woman is also wearing a jacket that covers most of her upper body.",
+      "ground_truth_response": "The image features a woman sitting at a dining table with a white birthday cake in front of her. She is smiling and preparing to blow out the candle on top of the cake. The cake is placed in the center of the table, surrounded by various utensils, such as forks, knives, and spoons. There are also two cups on the table, one on the left side and the other on the right side, close to the woman's hands. In the background, there is a chair where another person might be sitting, although it is not visible in the image. Overall, the scene captures a joyful moment as the woman celebrates her birthday with a delicious cake.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 96,
+          "text": "The image features a woman sitting at a dining table with a white birthday cake in front of her.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 97,
+          "end": 111,
+          "text": "She is smiling",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 112,
+          "end": 168,
+          "text": "and preparing to blow out the candle on top of the cake.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 169,
+          "end": 215,
+          "text": "The cake is placed in the center of the table,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 216,
+          "end": 247,
+          "text": "surrounded by various utensils,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 248,
+          "end": 262,
+          "text": "such as forks,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 263,
+          "end": 270,
+          "text": "knives,",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 271,
+          "end": 282,
+          "text": "and spoons.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 283,
+          "end": 297,
+          "text": "There are also",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 298,
+          "end": 301,
+          "text": "two",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 302,
+          "end": 320,
+          "text": "cups on the table,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 321,
+          "end": 341,
+          "text": "one on the left side",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 342,
+          "end": 374,
+          "text": "and the other on the right side,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 375,
+          "end": 402,
+          "text": "close to the woman's hands.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 403,
+          "end": 432,
+          "text": "In the background, there is a",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 433,
+          "end": 438,
+          "text": "chair",
+          "label": "UNSURE"
+        },
+        {
+          "start": 439,
+          "end": 477,
+          "text": "where another person might be sitting,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 478,
+          "end": 518,
+          "text": "although it is not visible in the image.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 528,
+          "end": 622,
+          "text": "the scene captures a joyful moment as the woman celebrates her birthday with a delicious cake.",
+          "label": "ANALYSIS"
+        }
+      ],
+      "label_counts": {
+        "accurate": 12,
+        "inaccurate": 4,
+        "analysis": 2
+      },
+      "hallucination_rate": 23.52941176470588,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000086848.jpg",
+      "question": "Can you describe the main features of this image for me?",
+      "prediction": "A woman is wearing a scarf that covers a significant portion of her upper body. On the table in front of her, there's a cake with a lit candle on it. To the right of the cake, there's a cup. The woman is also wearing a jacket that covers most of her upper body.",
+      "ground_truth_response": "The image features a woman sitting at a dining table with a white birthday cake in front of her. She is smiling and appears to be ready to blow out the candle on top of the cake. The cake is decorated with a red cherry on top, adding a festive touch to the occasion.   In addition to the birthday cake, there are several other items on the table, including a bowl, a cup, and a spoon. There are also two chairs placed around the table, likely for the woman and another person who may be joining her for the celebration. Overall, the scene conveys a warm and joyful atmosphere as the woman prepares to celebrate her special day.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 96,
+          "text": "The image features a woman sitting at a dining table with a white birthday cake in front of her.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 97,
+          "end": 111,
+          "text": "She is smiling",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 112,
+          "end": 178,
+          "text": "and appears to be ready to blow out the candle on top of the cake.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 179,
+          "end": 226,
+          "text": "The cake is decorated with a red cherry on top,",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 227,
+          "end": 266,
+          "text": "adding a festive touch to the occasion.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 303,
+          "end": 346,
+          "text": "there are several other items on the table,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 347,
+          "end": 364,
+          "text": "including a bowl,",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 365,
+          "end": 371,
+          "text": "a cup,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 372,
+          "end": 384,
+          "text": "and a spoon.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 385,
+          "end": 435,
+          "text": "There are also two chairs placed around the table,",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 436,
+          "end": 519,
+          "text": "likely for the woman and another person who may be joining her for the celebration.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 520,
+          "end": 627,
+          "text": "Overall, the scene conveys a warm and joyful atmosphere as the woman prepares to celebrate her special day.",
+          "label": "ANALYSIS"
+        }
+      ],
+      "label_counts": {
+        "accurate": 5,
+        "inaccurate": 4,
+        "analysis": 3
+      },
+      "hallucination_rate": 44.44444444444444,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000086848.jpg",
+      "question": "Can you describe the main features of this image for me?",
+      "prediction": "A woman is wearing a scarf that covers a significant portion of her upper body. On the table in front of her, there's a cake with a lit candle on it. To the right of the cake, there's a cup. The woman is also wearing a jacket that covers most of her upper body.",
+      "ground_truth_response": "The image features a woman sitting at a dining table with a white birthday cake in front of her. The cake is adorned with a single lit candle, creating a festive atmosphere. The woman is smiling as she prepares to blow out the candle.   In addition to the woman and the birthday cake, there are several other items on the table. A bowl can be seen towards the left side of the table, while a cup is situated closer to the woman's right side. There are also two chairs placed near the table, one on the left side and the other on the right side.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 96,
+          "text": "The image features a woman sitting at a dining table with a white birthday cake in front of her.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 97,
+          "end": 142,
+          "text": "The cake is adorned with a single lit candle,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 143,
+          "end": 173,
+          "text": "creating a festive atmosphere.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 174,
+          "end": 194,
+          "text": "The woman is smiling",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 195,
+          "end": 234,
+          "text": "as she prepares to blow out the candle.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 285,
+          "end": 294,
+          "text": "there are",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 295,
+          "end": 302,
+          "text": "several",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 303,
+          "end": 328,
+          "text": "other items on the table.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 329,
+          "end": 335,
+          "text": "A bowl",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 336,
+          "end": 359,
+          "text": "can be seen towards the",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 360,
+          "end": 364,
+          "text": "left",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 365,
+          "end": 383,
+          "text": "side of the table,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 384,
+          "end": 441,
+          "text": "while a cup is situated closer to the woman's right side.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 442,
+          "end": 544,
+          "text": "There are also two chairs placed near the table, one on the left side and the other on the right side.",
+          "label": "INACCURATE"
+        }
+      ],
+      "label_counts": {
+        "accurate": 8,
+        "inaccurate": 4,
+        "analysis": 2
+      },
+      "hallucination_rate": 33.33333333333333,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000086848.jpg",
+      "question": "Can you describe the main features of this image for me?",
+      "prediction": "A woman is wearing a scarf that covers a significant portion of her upper body. On the table in front of her, there's a cake with a lit candle on it. To the right of the cake, there's a cup. The woman is also wearing a jacket that covers most of her upper body.",
+      "ground_truth_response": "The image depicts a woman sitting at a dining table with a small white birthday cake in front of her. The cake has a single lit candle on top, creating a festive atmosphere. The woman is smiling as she prepares to blow out the candle.   In addition to the birthday cake, there are several other items on the table, including a bowl, a cup, and a spoon. There are also two chairs placed near the table, one on the left side and another on the right side.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 101,
+          "text": "The image depicts a woman sitting at a dining table with a small white birthday cake in front of her.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 102,
+          "end": 142,
+          "text": "The cake has a single lit candle on top,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 143,
+          "end": 173,
+          "text": "creating a festive atmosphere.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 174,
+          "end": 194,
+          "text": "The woman is smiling",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 195,
+          "end": 234,
+          "text": "as she prepares to blow out the candle.",
+          "label": "ANALYSIS"
+        },
+        {
+          "start": 271,
+          "end": 314,
+          "text": "there are several other items on the table,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 315,
+          "end": 324,
+          "text": "including",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 325,
+          "end": 332,
+          "text": "a bowl,",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 333,
+          "end": 339,
+          "text": "a cup,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 340,
+          "end": 352,
+          "text": "and a spoon.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 353,
+          "end": 453,
+          "text": "There are also two chairs placed near the table, one on the left side and another on the right side.",
+          "label": "INACCURATE"
+        }
+      ],
+      "label_counts": {
+        "accurate": 7,
+        "inaccurate": 2,
+        "analysis": 2
+      },
+      "hallucination_rate": 22.22222222222222,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000068036.jpg",
+      "question": "What do you think is going on in this snapshot?\n",
+      "prediction": "Three trains are present in the image. The first train is located on the far right, partially visible. The second train, which is the most prominent, is positioned in the middle of the image, spanning a significant portion of the frame. The third train is on the far left, appearing smaller due to its distance from the viewer.",
+      "ground_truth_response": "The image depicts a busy train station with multiple trains on the tracks. There are three trains in total, two of which are closer to the left side of the scene, while the third train is positioned towards the right side.   In addition to the trains, there are several people scattered throughout the scene. Two people can be seen on the left side of the image, and one person is located on the right side. These individuals seem to be waiting for the trains or engaging in other activities around the station.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 74,
+          "text": "The image depicts a busy train station with multiple trains on the tracks.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 75,
+          "end": 222,
+          "text": "There are three trains in total, two of which are closer to the left side of the scene, while the third train is positioned towards the right side.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 225,
+          "end": 308,
+          "text": "In addition to the trains, there are several people scattered throughout the scene.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 309,
+          "end": 407,
+          "text": "Two people can be seen on the left side of the image, and one person is located on the right side.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 408,
+          "end": 511,
+          "text": "These individuals seem to be waiting for the trains or engaging in other activities around the station.",
+          "label": "INACCURATE"
+        }
+      ],
+      "label_counts": {
+        "accurate": 2,
+        "inaccurate": 3,
+        "analysis": 0
+      },
+      "hallucination_rate": 60.0,
+      "skipped": false
+    },
+    {
+      "image": "COCO_val2014_000000068036.jpg",
+      "question": "What do you think is going on in this snapshot?\n",
+      "prediction": "Three trains are present in the image. The first train, located on the far right, is partially visible. The second train, which is the most prominent, is positioned in the middle and spans a significant portion of the image. The third train, located on the far left, is also partially visible.",
+      "ground_truth_response": "The image captures a busy train station with multiple trains on the tracks. There are at least four trains visible in the scene, each traveling along different tracks. Two trains are closer to the left side of the image, while the other two are located on the right side.   In addition to the trains, there are several people scattered throughout the scene. One person can be seen standing on the left side of the image, while another person is situated on the right side. There may be more people present in the scene, but they are less visible due to the focus on the trains.",
+      "ground_truth_annotations": [
+        {
+          "start": 0,
+          "end": 75,
+          "text": "The image captures a busy train station with multiple trains on the tracks.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 76,
+          "end": 85,
+          "text": "There are",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 86,
+          "end": 99,
+          "text": "at least four",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 100,
+          "end": 167,
+          "text": "trains visible in the scene, each traveling along different tracks.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 168,
+          "end": 220,
+          "text": "Two trains are closer to the left side of the image,",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 221,
+          "end": 236,
+          "text": "while the other",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 237,
+          "end": 240,
+          "text": "two",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 241,
+          "end": 271,
+          "text": "are located on the right side.",
+          "label": "ACCURATE"
+        },
+        {
+          "start": 274,
+          "end": 357,
+          "text": "In addition to the trains, there are several people scattered throughout the scene.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 358,
+          "end": 472,
+          "text": "One person can be seen standing on the left side of the image, while another person is situated on the right side.",
+          "label": "INACCURATE"
+        },
+        {
+          "start": 473,
+          "end": 577,
+          "text": "There may be more people present in the scene, but they are less visible due to the focus on the trains.",
+          "label": "INACCURATE"
+        }
+      ],
+      "label_counts": {
+        "accurate": 6,
+        "inaccurate": 5,
+        "analysis": 0
+      },
+      "hallucination_rate": 45.45454545454545,
+      "skipped": false
+    }
+  ]
+}
