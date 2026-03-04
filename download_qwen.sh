@@ -1,12 +1,12 @@
 #!/bin/bash
-# Download Qwen2.5-7B-Instruct model to cluster storage
+# Download Qwen2-VL-7B-Instruct model to cluster storage
 
 set -e
 
-MODEL_DIR="/fs/nexus-scratch/bhetwal/models/Qwen/Qwen2.5-7B-Instruct"
-MODEL_NAME="Qwen/Qwen2.5-7B-Instruct"
+MODEL_DIR="/fs/nexus-scratch/bhetwal/models/Qwen/Qwen2-VL-7B-Instruct"
+MODEL_NAME="Qwen/Qwen2-VL-7B-Instruct"
 
-echo "Downloading Qwen2.5-7B-Instruct model..."
+echo "Downloading Qwen2-VL-7B-Instruct model..."
 echo "Target directory: $MODEL_DIR"
 
 # Create model directory

@@ -30,13 +30,13 @@ export HUGGINGFACE_HUB_CACHE=/fs/nexus-scratch/bhetwal/.cache/huggingface
 # Upgrade transformers to version compatible with vLLM 0.11.2
 # pip install 'transformers>=4.47.0' --quiet
 
-echo "Starting vLLM server with Qwen2.5-7B-Instruct"
+echo "Starting vLLM server with Qwen2-VL-7B-Instruct"
 echo "GPU: $CUDA_VISIBLE_DEVICES"
 echo "Node: $SLURMD_NODENAME"
 
 # Start vLLM server in background
 python -m vllm.entrypoints.openai.api_server \
-    --model /fs/nexus-scratch/bhetwal/models/Qwen/Qwen2.5-7B-Instruct \
+    --model /fs/nexus-scratch/bhetwal/models/Qwen/Qwen2-VL-7B-Instruct \
     --host 0.0.0.0 \
     --port 8000 \
     --gpu-memory-utilization 0.85 \

@@ -82,7 +82,7 @@ class VQAInference:
         ]
 
         payload = {
-            "model": "/fs/nexus-scratch/bhetwal/models/Qwen/Qwen2.5-7B-Instruct",  # Match the loaded model path
+            "model": "/fs/nexus-scratch/bhetwal/models/Qwen/Qwen2-VL-7B-Instruct",  # Match the loaded model path
             "messages": messages,
             "max_tokens": kwargs.get("max_tokens", 512),
             "temperature": kwargs.get("temperature", 0.7),
