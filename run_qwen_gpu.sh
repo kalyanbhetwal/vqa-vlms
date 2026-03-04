@@ -23,6 +23,10 @@ module load cuda/12.1.1
 # Activate virtual environment
 source /fs/nexus-scratch/bhetwal/vllm-env/bin/activate
 
+# Set HuggingFace cache directory
+export HF_HOME=/fs/nexus-scratch/bhetwal/.cache/huggingface
+export HUGGINGFACE_HUB_CACHE=/fs/nexus-scratch/bhetwal/.cache/huggingface
+
 # Upgrade transformers to version compatible with vLLM 0.11.2
 # pip install 'transformers>=4.47.0' --quiet
 

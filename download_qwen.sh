@@ -15,8 +15,9 @@ mkdir -p "$MODEL_DIR"
 # Activate your virtual environment
 source /fs/nexus-scratch/bhetwal/vllm-env/bin/activate
 
-# Install huggingface_hub if needed
-pip install -U huggingface_hub
+# Set HuggingFace cache directory
+export HF_HOME=/fs/nexus-scratch/bhetwal/.cache/huggingface
+export HUGGINGFACE_HUB_CACHE=/fs/nexus-scratch/bhetwal/.cache/huggingface
 
 # Download the model using Python
 python3 << EOF
