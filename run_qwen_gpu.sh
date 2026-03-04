@@ -23,6 +23,9 @@ module load cuda/12.1.1
 # Activate virtual environment
 source /fs/nexus-scratch/bhetwal/vllm-env/bin/activate
 
+# Upgrade vLLM and transformers to latest compatible versions
+pip install --upgrade vllm transformers --quiet
+
 echo "Starting vLLM server with Qwen2.5-7B-Instruct"
 echo "GPU: $CUDA_VISIBLE_DEVICES"
 echo "Node: $SLURMD_NODENAME"
