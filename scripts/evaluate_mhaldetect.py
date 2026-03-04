@@ -39,61 +39,60 @@ class MHalDetectEvaluator:
             self.data = json.load(f)
         print(f"Loaded {len(self.data)} examples")
 
-    def get_image_path(self, image_id: int) -> Path:
-        """Get full path to COCO image from image ID"""
-        # COCO 2014 validation images are named like COCO_val2014_000000XXXXXX.jpg
-        image_filename = f"COCO_val2014_{image_id:012d}.jpg"
+    def get_image_path(self, image_filename: str) -> Path:
+        """Get full path to COCO image from filename"""
         return self.coco_images_path / image_filename
 
-    def classify_segments(self, segments: List[Dict]) -> Dict[str, int]:
+    def classify_annotations(self, annotations: List[Dict]) -> Dict[str, int]:
         """
-        Classify segments by hallucination type
+        Classify annotations by label type
 
         Args:
-            segments: List of segment annotations with 'class' labels
+            annotations: List of annotations with 'label' field
 
         Returns:
-            Dictionary with counts for each class
+            Dictionary with counts for each label type
         """
-        class_counts = {
+        label_counts = {
             'accurate': 0,
-            'inaccurate_object': 0,
-            'inaccurate_attribute': 0,
-            'inaccurate_relation': 0,
-            'inaccurate_other': 0
+            'inaccurate': 0,
+            'analysis': 0
         }
 
-        for seg in segments:
-            seg_class = seg.get('class', 'unknown').lower()
-            if seg_class == 'accurate':
-                class_counts['accurate'] += 1
-            elif 'object' in seg_class or 'entity' in seg_class:
-                class_counts['inaccurate_object'] += 1
-            elif 'attribute' in seg_class or 'description' in seg_class:
-                class_counts['inaccurate_attribute'] += 1
-            elif 'relation' in seg_class:
-                class_counts['inaccurate_relation'] += 1
-            elif 'inaccurate' in seg_class:
-                class_counts['inaccurate_other'] += 1
+        for annot in annotations:
+            label = annot.get('label', 'UNKNOWN').upper()
+            if label == 'ACCURATE':
+                label_counts['accurate'] += 1
+            elif label == 'INACCURATE':
+                label_counts['inaccurate'] += 1
+            elif label == 'ANALYSIS':
+                label_counts['analysis'] += 1
 
-        return class_counts
+        return label_counts
 
-    def compute_hallucination_rate(self, segments: List[Dict]) -> float:
+    def compute_hallucination_rate(self, annotations: List[Dict]) -> float:
         """
-        Compute hallucination rate from segment annotations
+        Compute hallucination rate from annotations
 
         Args:
-            segments: List of segment annotations
+            annotations: List of annotations with 'label' field
 
         Returns:
-            Hallucination rate (percentage of inaccurate segments)
+            Hallucination rate (percentage of inaccurate annotations, excluding ANALYSIS)
         """
-        if not segments:
+        if not annotations:
             return 0.0
 
-        total = len(segments)
-        inaccurate = sum(1 for seg in segments
-                        if 'inaccurate' in seg.get('class', '').lower())
+        # Exclude ANALYSIS labels from calculation
+        content_annotations = [a for a in annotations
+                              if a.get('label', '').upper() != 'ANALYSIS']
+
+        if not content_annotations:
+            return 0.0
+
+        total = len(content_annotations)
+        inaccurate = sum(1 for a in content_annotations
+                        if a.get('label', '').upper() == 'INACCURATE')
 
         return (inaccurate / total) * 100
 
@@ -102,19 +101,21 @@ class MHalDetectEvaluator:
         Evaluate a single sample from M-HalDetect
 
         Args:
-            sample: Single M-HalDetect sample with 'image_id', 'question', 'segments'
+            sample: Single M-HalDetect sample with 'image', 'question', 'annotations'
             **kwargs: Additional generation parameters
 
         Returns:
             Dictionary with prediction and evaluation metrics
         """
-        image_id = sample['image_id']
+        image_filename = sample['image']
         question = sample['question']
-        image_path = self.get_image_path(image_id)
+        # Remove <image> token from question
+        question_text = question.replace('<image>\n', '').replace('<image>', '')
+        image_path = self.get_image_path(image_filename)
 
         if not image_path.exists():
             return {
-                'image_id': image_id,
+                'image': image_filename,
                 'error': f'Image not found: {image_path}',
                 'skipped': True
             }
@@ -123,27 +124,29 @@ class MHalDetectEvaluator:
         try:
             prediction = self.vqa.ask_question(
                 str(image_path),
-                question,
+                question_text,
                 **kwargs
             )
         except Exception as e:
             return {
-                'image_id': image_id,
+                'image': image_filename,
                 'error': str(e),
                 'skipped': True
             }
 
         # Compute metrics from ground truth
-        segments = sample.get('segments', [])
-        class_counts = self.classify_segments(segments)
-        hallucination_rate = self.compute_hallucination_rate(segments)
+        annotations = sample.get('annotations', [])
+        ground_truth_response = sample.get('response', '')
+        label_counts = self.classify_annotations(annotations)
+        hallucination_rate = self.compute_hallucination_rate(annotations)
 
         return {
-            'image_id': image_id,
-            'question': question,
+            'image': image_filename,
+            'question': question_text,
             'prediction': prediction,
-            'ground_truth_segments': segments,
-            'class_counts': class_counts,
+            'ground_truth_response': ground_truth_response,
+            'ground_truth_annotations': annotations,
+            'label_counts': label_counts,
             'hallucination_rate': hallucination_rate,
             'skipped': False
         }
@@ -182,33 +185,31 @@ class MHalDetectEvaluator:
             r['hallucination_rate'] for r in valid_results
         ])
 
-        # Aggregate class counts
-        total_class_counts = {
+        # Aggregate label counts
+        total_label_counts = {
             'accurate': 0,
-            'inaccurate_object': 0,
-            'inaccurate_attribute': 0,
-            'inaccurate_relation': 0,
-            'inaccurate_other': 0
+            'inaccurate': 0,
+            'analysis': 0
         }
 
         for result in valid_results:
-            for key in total_class_counts:
-                total_class_counts[key] += result['class_counts'].get(key, 0)
+            for key in total_label_counts:
+                total_label_counts[key] += result['label_counts'].get(key, 0)
 
         # Compute percentages
-        total_segments = sum(total_class_counts.values())
-        class_percentages = {
-            key: (count / total_segments * 100) if total_segments > 0 else 0
-            for key, count in total_class_counts.items()
+        total_annotations = sum(total_label_counts.values())
+        label_percentages = {
+            key: (count / total_annotations * 100) if total_annotations > 0 else 0
+            for key, count in total_label_counts.items()
         }
 
         summary = {
             'total_samples': total_samples,
             'skipped_samples': len(results) - total_samples,
             'avg_hallucination_rate': avg_hallucination_rate,
-            'total_class_counts': total_class_counts,
-            'class_percentages': class_percentages,
-            'total_segments': total_segments
+            'total_label_counts': total_label_counts,
+            'label_percentages': label_percentages,
+            'total_annotations': total_annotations
         }
 
         # Save detailed results if requested
@@ -297,11 +298,11 @@ def main():
     print(f"Total samples evaluated: {summary['total_samples']}")
     print(f"Skipped samples: {summary['skipped_samples']}")
     print(f"\nAverage hallucination rate: {summary['avg_hallucination_rate']:.2f}%")
-    print(f"\nSegment class distribution:")
-    print(f"  Total segments: {summary['total_segments']}")
-    for class_name, percentage in summary['class_percentages'].items():
-        count = summary['total_class_counts'][class_name]
-        print(f"  {class_name}: {count} ({percentage:.2f}%)")
+    print(f"\nAnnotation label distribution:")
+    print(f"  Total annotations: {summary['total_annotations']}")
+    for label_name, percentage in summary['label_percentages'].items():
+        count = summary['total_label_counts'][label_name]
+        print(f"  {label_name}: {count} ({percentage:.2f}%)")
     print("="*60)
 
 

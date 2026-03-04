@@ -70,7 +70,7 @@ sbatch run_qwen_gpu.sh
 
 # In another terminal, run evaluation
 python scripts/evaluate_mhaldetect.py \
-    --dataset /fs/nexus-scratch/bhetwal/data/mhaldetect/dataset.json \
+    --dataset /fs/nexus-scratch/bhetwal/data/mhaldetect/val_raw.json \
     --coco-images /fs/nexus-scratch/bhetwal/data/coco/val2014 \
     --max-samples 100 \
     --output results/test_eval.json
@@ -81,7 +81,9 @@ python scripts/evaluate_mhaldetect.py \
 ```
 /fs/nexus-scratch/bhetwal/data/
 ├── mhaldetect/
-│   └── dataset.json          # M-HalDetect annotations
+│   ├── train_raw.json        # M-HalDetect training set
+│   ├── val_raw.json          # M-HalDetect validation set
+│   └── README.md             # Dataset documentation
 └── coco/
     └── val2014/              # COCO 2014 validation images
 ```

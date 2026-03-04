@@ -27,7 +27,7 @@ source /fs/nexus-scratch/bhetwal/vllm-env/bin/activate
 #pip install 'transformers>=4.47.0' --quiet
 
 # Dataset paths
-MHALDETECT_DATASET="/fs/nexus-scratch/bhetwal/data/mhaldetect/dataset.json"
+MHALDETECT_DATASET="/fs/nexus-scratch/bhetwal/data/mhaldetect/val_raw.json"
 COCO_IMAGES="/fs/nexus-scratch/bhetwal/data/coco/val2014"
 MODEL_PATH="/fs/nexus-scratch/bhetwal/models/Qwen/Qwen2.5-7B-Instruct"
 
